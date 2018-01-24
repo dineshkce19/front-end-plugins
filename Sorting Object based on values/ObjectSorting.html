@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Sorting</title>
+<script type="text/javascript">
+var presetFinalJson=[
+	{
+		"schedule_No":"1",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SEA1006",
+		"passes":"2",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.575",
+		"width":"1070",
+		"Update_time":"15 March 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"2",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SPHC",
+		"passes":"3",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.675",
+		"width":"1070",
+		"Update_time":"15 December 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"3",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"DQ",
+		"passes":"4",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.775",
+		"width":"1070",
+		"Update_time":"15 April 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"4",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"DQ",
+		"passes":"2",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"5",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SPHC",
+		"passes":"1",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"6",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SEA1006",
+		"passes":"3",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"7",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"DQ",
+		"passes":"5",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"8",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SPHC",
+		"passes":"2",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"9",
+		"presetID":"P-2.q-1219-1850-0.402",
+		"grade":"SEA1006",
+		"passes":"3",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 am",
+	},
+	{
+		"schedule_No":"10",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"DQ",
+		"passes":"1",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"11",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SPHC",
+		"passes":"2",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"12",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SEA1006",
+		"passes":"4",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"13",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"DQ",
+		"passes":"2",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"14",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SPHC",
+		"passes":"1",
+		"thicknessInput":"2",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	},
+	{
+		"schedule_No":"15",
+		"presetID":"P-2.0-1219-1850-0.402",
+		"grade":"SEA1006",
+		"passes":"3",
+		"thicknessInput":"3",
+		"thicknessTarget":"1.475",
+		"width":"1070",
+		"Update_time":"15 July 2017, 4:23 pm",
+	}
+];
+const dataClasses = {
+	"date":Date,
+	"string":String,
+	"number":Number
+}
+var sortObject = function(key,type){
+	console.log(dataClasses[type]);
+	presetFinalJson.sort(function(value1,value2){
+		var x = new dataClasses[type](value1[key]);
+		var y = new dataClasses[type](value2[key]);
+		if(x > y)
+			return 1;
+		if(x < y)
+			return -1;
+		return 0; 
+	});
+}	
+sortObject("Update_time","date");
+console.log(presetFinalJson);
+</script>
+</head>
+<body>
+
+</body>
+</html>
